@@ -75,13 +75,14 @@ function sortearAmigo() {
 
     resultadoElement.innerHTML = `<li>🎉 El amigo secreto es: <strong>${amigoSecreto}</strong> 🎉</li>`;
 }
-
+```
 ## 🔥 Mejoras futuras
 
 - Agregar la opción de eliminar nombres de la lista.
 - Permitir exportar la lista en formato CSV o PDF.
 - Implementar un temporizador para el sorteo.
 - Mejorar la interfaz con animaciones CSS.
+
 
 
 
