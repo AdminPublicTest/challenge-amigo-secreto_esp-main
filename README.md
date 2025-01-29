@@ -24,13 +24,13 @@ Este proyecto es una aplicación web simple que permite a los usuarios ingresar 
 
 > Los nombres ingresados aparecen en la lista de la interfaz.
 
-![Nombres agregados](assets/nombres_agregados.png)
+![Nombres agregados](assets/nombres_agregados.gif)
 
 ### 3️⃣ **Sorteo realizado**
 
 > Al hacer clic en "Sortear amigo", se elige un nombre aleatorio y se muestra el resultado.
 
-![Sorteo realizado](assets/sorteo_realizado.png)
+![Sorteo realizado](assets/sorteo_realizado.gif)
 
 ## 🚀 Instalación y ejecución
 
