@@ -65,9 +65,24 @@ function mostrarResultado(resultado) {
     }
 }
 
+// Función para sortear un solo amigo aleatoriamente
+function sortearUnAmigo() {
+    if (amigos.length === 0) { // Verifica que haya al menos un amigo en la lista
+        alert("No hay amigos en la lista para sortear.");
+        return;
+    }
+    
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length); // Genera un índice aleatorio
+    let amigoSorteado = amigos[indiceAleatorio]; // Obtiene el nombre sorteado
+    
+    // Muestra el resultado en la interfaz
+    document.getElementById("resultado").innerHTML = `<p>Amigo sorteado: <strong>${amigoSorteado}</strong></p>`;
+}
+
 // Función para reiniciar la lista de amigos
 function reiniciarLista() {
     amigos = []; // Vacía la lista de amigos
     actualizarLista(); // Actualiza la interfaz para reflejar la lista vacía
     document.getElementById("resultado").innerHTML = ""; // Limpia los resultados del sorteo
 }
+
