@@ -60,7 +60,7 @@ function mostrarResultado(resultado) {
     
     for (let [amigo, amigoSecreto] of Object.entries(resultado)) {
         const li = document.createElement("li"); // Crea un nuevo elemento de lista
-        li.innerHTML = `<span style="color: green; font-weight: bold;">El amigo secreto sorteado es: ${amigoSecreto}</span>`; // Muestra la asignación del amigo secreto con estilo
+        li.textContent = `${amigo} → ${amigoSecreto}`; // Muestra la asignación del amigo secreto
         listaResultados.appendChild(li); // Añade el resultado a la lista en la interfaz
     }
 }
@@ -75,8 +75,8 @@ function sortearUnAmigo() {
     let indiceAleatorio = Math.floor(Math.random() * amigos.length); // Genera un índice aleatorio
     let amigoSorteado = amigos[indiceAleatorio]; // Obtiene el nombre sorteado
     
-    // Muestra el resultado en la interfaz con formato específico
-    document.getElementById("resultado").innerHTML = `<p style="color: green; font-weight: bold;">El amigo secreto sorteado es: ${amigoSorteado}</p>`;
+    // Muestra el resultado en la interfaz
+    document.getElementById("resultado").innerHTML = `<p>Amigo sorteado: <strong>${amigoSorteado}</strong></p>`;
 }
 
 // Función para reiniciar la lista de amigos
@@ -85,5 +85,4 @@ function reiniciarLista() {
     actualizarLista(); // Actualiza la interfaz para reflejar la lista vacía
     document.getElementById("resultado").innerHTML = ""; // Limpia los resultados del sorteo
 }
-
 
