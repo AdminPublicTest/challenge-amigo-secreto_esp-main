@@ -65,7 +65,7 @@ function mostrarResultado(resultado) {
     }
 }
 
-// Función para sortear un solo amigo aleatoriamente
+// Función para sortear un solo amigo aleatoriamente con formato correcto
 function sortearUnAmigo() {
     if (amigos.length === 0) { // Verifica que haya al menos un amigo en la lista
         alert("No hay amigos en la lista para sortear.");
@@ -76,7 +76,7 @@ function sortearUnAmigo() {
     let amigoSorteado = amigos[indiceAleatorio]; // Obtiene el nombre sorteado
     
     // Muestra el resultado en la interfaz con el formato correcto
-    document.getElementById("resultado").innerHTML = `<p style="color: green; font-weight: bold;">El amigo secreto sorteado es: ${amigoSorteado}</p>`;
+    document.getElementById("resultado").innerHTML = `<p style="color: green; font-weight: bold; font-size: 18px;">El amigo secreto sorteado es: ${amigoSorteado}</p>`;
 }
 
 // Función para reiniciar la lista de amigos
