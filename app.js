@@ -1,54 +1,71 @@
-// Lista para almacenar los nombres ingresados
-let listaAmigos = [];
+// Paso 1: Crear un array para almacenar los nombres de los amigos
+// Inicialmente, este array estará vacío y se llenará con los nombres que el usuario ingrese.
+let amigos = [];
 
-// Función para agregar un amigo a la lista
+// Paso 2: Función para agregar un amigo a la lista
 function agregarAmigo() {
-    const inputAmigo = document.getElementById("amigo");
-    const listaElement = document.getElementById("listaAmigos");
+    // Capturar el campo de entrada donde el usuario escribe el nombre
+    let inputAmigo = document.getElementById("amigo");
 
-    // Obtener el valor del input y eliminar espacios en blanco
-    const nombre = inputAmigo.value.trim();
+    // Obtener el valor ingresado y eliminar espacios innecesarios
+    let nombre = inputAmigo.value.trim();
 
     // Validar que el campo no esté vacío
     if (nombre === "") {
-        alert("Por favor, ingrese un nombre válido.");
-        return;
+        alert("Por favor, inserte un nombre."); // Mensaje de error si el campo está vacío
+        return; // Detener la función si el nombre no es válido
     }
 
-    // Validar que el nombre no esté duplicado
-    if (listaAmigos.includes(nombre)) {
+    // Verificar si el nombre ya está en la lista para evitar duplicados
+    if (amigos.includes(nombre)) {
         alert("Este nombre ya ha sido ingresado.");
-        return;
+        return; // No agregar el nombre si ya existe
     }
 
-    // Agregar el nombre a la lista
-    listaAmigos.push(nombre);
+    // Agregar el nombre al array de amigos
+    amigos.push(nombre);
 
-    // Crear un nuevo elemento <li> para la lista
-    const nuevoElemento = document.createElement("li");
-    nuevoElemento.textContent = nombre;
-    
-    // Agregar el elemento a la lista visible
-    listaElement.appendChild(nuevoElemento);
+    // Llamar a la función que actualiza la lista en la pantalla
+    actualizarLista();
 
-    // Limpiar el campo de entrada después de agregar
+    // Limpiar el campo de entrada después de agregar el nombre
     inputAmigo.value = "";
 }
 
-// Función para sortear un amigo aleatorio
+// Paso 3: Función para actualizar la lista de amigos en la interfaz
+function actualizarLista() {
+    // Obtener el elemento <ul> donde se mostrarán los nombres de los amigos
+    let listaElement = document.getElementById("listaAmigos");
+
+    // Limpiar la lista existente para evitar duplicados
+    listaElement.innerHTML = "";
+
+    // Recorrer el array de amigos y agregar cada nombre como un elemento <li>
+    for (let i = 0; i < amigos.length; i++) {
+        let nuevoElemento = document.createElement("li"); // Crear un nuevo <li>
+        nuevoElemento.textContent = amigos[i]; // Asignar el nombre del amigo al <li>
+        listaElement.appendChild(nuevoElemento); // Agregar el <li> a la lista en la interfaz
+    }
+}
+
+// Paso 4: Función para sortear un amigo al azar
 function sortearAmigo() {
-    const resultadoElement = document.getElementById("resultado");
+    // Obtener el elemento donde se mostrará el resultado
+    let resultadoElement = document.getElementById("resultado");
 
     // Validar que haya al menos un nombre en la lista
-    if (listaAmigos.length === 0) {
-        alert("Debe agregar al menos un nombre para sortear.");
-        return;
+    if (amigos.length === 0) {
+        alert("Debe agregar al menos un nombre para sortear."); // Mensaje de error si la lista está vacía
+        return; // Detener la función si no hay nombres
     }
 
-    // Seleccionar un nombre al azar
-    const indiceAleatorio = Math.floor(Math.random() * listaAmigos.length);
-    const amigoSecreto = listaAmigos[indiceAleatorio];
+    // Generar un índice aleatorio usando Math.random() y Math.floor()
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+
+    // Obtener el nombre sorteado usando el índice aleatorio
+    let amigoSecreto = amigos[indiceAleatorio];
 
     // Mostrar el resultado en la página
     resultadoElement.innerHTML = `<li>🎉 El amigo secreto es: <strong>${amigoSecreto}</strong> 🎉</li>`;
 }
+
