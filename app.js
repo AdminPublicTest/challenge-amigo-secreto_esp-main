@@ -28,44 +28,7 @@ function actualizarLista() {
     });
 }
 
-// Función para realizar el sorteo del amigo secreto
-function sortearAmigo() {
-    if (amigos.length < 2) { // Se necesita al menos dos personas para realizar el sorteo
-        alert("Debe haber al menos dos amigos para sortear.");
-        return;
-    }
-    
-    let copiaAmigos = [...amigos]; // Copia la lista original para evitar modificarla directamente
-    let resultado = {}; // Objeto para almacenar las parejas sorteadas
-    
-    amigos.forEach((amigo) => {
-        let indiceAleatorio;
-        
-        // Asegura que una persona no se asigne a sí misma
-        do {
-            indiceAleatorio = Math.floor(Math.random() * copiaAmigos.length);
-        } while (copiaAmigos[indiceAleatorio] === amigo);
-        
-        resultado[amigo] = copiaAmigos[indiceAleatorio]; // Asigna un amigo secreto
-        copiaAmigos.splice(indiceAleatorio, 1); // Elimina al asignado para que no se repita
-    });
-    
-    mostrarResultado(resultado); // Llama a la función para mostrar los resultados en pantalla
-}
-
-// Función para mostrar el resultado del sorteo en la interfaz
-function mostrarResultado(resultado) {
-    const listaResultados = document.getElementById("resultado"); // Obtiene el UL donde se mostrarán los resultados
-    listaResultados.innerHTML = ""; // Limpia la lista antes de actualizarla
-    
-    for (let [amigo, amigoSecreto] of Object.entries(resultado)) {
-        const li = document.createElement("li"); // Crea un nuevo elemento de lista
-        li.textContent = `${amigo} → ${amigoSecreto}`; // Muestra la asignación del amigo secreto
-        listaResultados.appendChild(li); // Añade el resultado a la lista en la interfaz
-    }
-}
-
-// ✅✅✅ FUNCION ACTUALIZADA PARA MOSTRAR EL AMIGO SECRETO CORRECTAMENTE ✅✅✅
+// ✅✅✅ FUNCIÓN ACTUALIZADA PARA MOSTRAR UN SOLO AMIGO SECRETO ✅✅✅
 function sortearUnAmigo() {
     if (amigos.length === 0) { // Verifica que haya al menos un amigo en la lista
         alert("No hay amigos en la lista para sortear.");
@@ -86,5 +49,6 @@ function reiniciarLista() {
     actualizarLista(); // Actualiza la interfaz para reflejar la lista vacía
     document.getElementById("resultado").innerHTML = ""; // Limpia los resultados del sorteo
 }
+
 
 
