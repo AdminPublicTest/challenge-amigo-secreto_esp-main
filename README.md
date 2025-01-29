@@ -37,7 +37,7 @@ Este proyecto es una aplicación web simple que permite a los usuarios ingresar 
 ### 1️⃣ Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/amigo-secreto.git
+git clone https://github.com/AdminPublicTest/challenge-amigo-secreto_esp-main.git
 ```
 
 ### 2️⃣ Instalar dependencias (si aplicable)
