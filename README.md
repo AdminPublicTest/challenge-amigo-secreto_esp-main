@@ -32,34 +32,11 @@ Este proyecto es una aplicación web simple que permite a los usuarios ingresar 
 
 ![Sorteo realizado](assets/sorteo_realizado.gif)
 
-## 🚀 Instalación y ejecución
-
-### 1️⃣ Clonar el repositorio
-
-```bash
-git clone https://github.com/AdminPublicTest/challenge-amigo-secreto_esp-main.git
-```
-
-### 2️⃣ Instalar dependencias (si aplicable)
-
-```bash
-cd amigo-secreto
-npm install  # Solo si hay dependencias
-```
-
-### 3️⃣ Abrir el archivo HTML
-
-```bash
-start index.html # Para Windows
-open index.html # Para Mac
-xdg-open index.html # Para Linux
-```
-
 ## 🛠️ Tecnologías utilizadas
 
-- HTML5
-- CSS3
-- JavaScript (Vanilla JS)
+- HTML
+- CSS
+- JavaScript
 
 ## 📌 Cómo usarlo
 
@@ -98,24 +75,6 @@ function sortearAmigo() {
 
     resultadoElement.innerHTML = `<li>🎉 El amigo secreto es: <strong>${amigoSecreto}</strong> 🎉</li>`;
 }
-```
-
-## 📖 Documentación
-
-Consulta nuestra [Guía de Uso](https://github.com/tu-usuario/amigo-secreto/wiki) para más información sobre cómo personalizar y mejorar la aplicación.
-
-## 🔍 Compatibilidad
-Este proyecto ha sido probado en los siguientes navegadores:
-- ✅ Google Chrome
-- ✅ Mozilla Firefox
-- ✅ Microsoft Edge
-- ✅ Safari
-
-## ✅ Pruebas
-Para ejecutar pruebas unitarias (si aplicable), usa:
-```bash
-npm test
-```
 
 ## 🔥 Mejoras futuras
 
@@ -124,11 +83,5 @@ npm test
 - Implementar un temporizador para el sorteo.
 - Mejorar la interfaz con animaciones CSS.
 
-## 📜 Licencia
 
-Este proyecto está bajo la licencia **MIT**.
-
----
-
-🎯 **¡Espero que este README ayude a documentar y mejorar tu proyecto!** 🚀
 
